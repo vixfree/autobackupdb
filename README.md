@@ -1,6 +1,6 @@
 # backupdb
 
-
+RU:
 -----
 
 
@@ -9,6 +9,15 @@
 
 Праметры скрипта которые необходимо корректировать.
 Формат должен быть такой же.
+
+-----
+EN:
+-----
+* Script in bash language, for automated backup databases.
+* Supported databases: postgresql, mysql
+
+Parameters of the script that must be adjusted.
+The format should be the same.
 
 -----
 ```
