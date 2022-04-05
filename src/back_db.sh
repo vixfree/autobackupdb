@@ -10,7 +10,7 @@
 ## dependencies scripts
 #<tools_script>
 pkgdep=( "postgresql-client" "mariadb-client" "pigz" );	# packages
-get_tools=( "pg_dump" "mysqldump" "pigz"  ); 		# tools for script
+get_tools=( "pg_dump" "mysqldump" ); 		# tools for script
 #</tools_script>
 
 ## only pgsql & mysql
