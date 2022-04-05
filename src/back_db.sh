@@ -94,8 +94,10 @@ for ((dbinx=0; dbinx != ${#DBDATA[@]}; dbinx++))
             then
             mkdir -p $rpath/$dbname;
             fi
-        if sudo mysqldump -v -h$dbhost -u$dblogin -p$dbpass $dbname | pigz -p2 -c9 > $rpath/$dbname/$dbname"_"$rdate.sql.gz
+        if sudo mysqldump -v -h$dbhost -u$dblogin -p$dbpass $dbname > $rpath/$dbname/$dbname"_"$rdate.sql
             then
+                tar -cJf $rpath/$dbname/$dbname"_"$rdate.tar.xz $rpath/$dbname/$dbname"_"$rdate.sql;
+                rm $rpath/$dbname/$dbname"_"$rdate.sql;
                 echo "$(date) -- backup mysqlbase $MESS_OK">>$LOG_FILE
                 date|mailx -a "Content-Type: text/plain; charset=UTF-8" -s "$(date) -- backup mysqlbase $MESS_OK" $adminmail
             else
